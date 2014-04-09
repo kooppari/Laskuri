@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ravintoarvolaskuri</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Weak food converter / calculator">
+        <link rel="stylesheet" type="text/css" href="css\style.css">
+
+        <!-- scripts -->
+        <script src="js\main.js"></script>
+
+        <script type="text/javascript">
+            /* setit */
+
+            function roundToTwo(num) {
+                return +(Math.round(num + "e+2")  + "e-2");
+            }
+
+            var pastar = 62/100;
+            var perunar = 16/100;
+            var riisir = 80/100;
+
+            function laske_riisi () {
+                var riisi_maara = document.getElementById('riisi').value;
+
+                var pasta22 = (80/62)*riisi_maara;
+                var riisi22 = (80/80)*riisi_maara;
+                var peruna22 = (80/16)*riisi_maara;
+
+
+                document.getElementById("pasta2").value = roundToTwo(pasta22) +"g";
+                document.getElementById("peruna2").value = roundToTwo(peruna22) +"g";
+                document.getElementById("riisi2").value = roundToTwo(riisi22) +"g";
+            }
+
+            function laske_peruna () {
+                var peruna_maara = document.getElementById('peruna').value;
+
+                var pasta22 = (16/62)*peruna_maara;
+                var riisi22 = (16/80)*peruna_maara;
+                var peruna22 = (16/16)*peruna_maara;
+
+
+                document.getElementById("pasta2").value = roundToTwo(pasta22) +"g";
+                document.getElementById("peruna2").value = roundToTwo(peruna22) +"g";
+                document.getElementById("riisi2").value = roundToTwo(riisi22) +"g";
+            }
+
+            function laske_pasta () {
+                var pasta_maara = document.getElementById('pasta').value;
+
+                var pasta22 = (62/62)*pasta_maara;
+                var riisi22 = (62/80)*pasta_maara;
+                var peruna22 = (62/16)*pasta_maara;
+
+
+                document.getElementById("pasta2").value = roundToTwo(pasta22) +"g";
+                document.getElementById("peruna2").value = roundToTwo(peruna22) +"g";
+                document.getElementById("riisi2").value = roundToTwo(riisi22) +"g";
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id="container">
+            <!-- Setit -->
+
+            <div id="header">
+
+                <h1>Ravintoarvolaskuri</h1>
+                <p>Jäätävän huono ravintoarvolaskurin tynkä. Omaan käyttöön tarkoitettu</p>
+
+                <!-- ### mahdollinen navigointi ### -->
+
+            </div> <!-- header -->
+
+            <div id="content">
+                <h3> Grammamuunnin </h3>
+                <div id="aineet">
+                    <label>Pasta:</label> <input type="text" name="pasta" id="pasta" /> <input type="button" id="laske1" value="Laske" onclick="laske_pasta();"> <br />
+
+                    <label>Peruna:</label> <input type="text" name="peruna" id="peruna" /> <input type="button" id="laske2" value="Laske" onclick="laske_peruna();"> &#8594; <br />
+
+                    <label>Riisi:</label> <input type="text" name="riisi" id="riisi" /> <input type="button" id="laske3" value="Laske" onclick="laske_riisi();"> <br />
+
+                </div>
+
+                <div id="aineet2">
+                    <label>Pasta:</label> <input type="text" name="pasta2" id="pasta2"  readonly="" /> <br />
+
+                    <label>Peruna:</label> <input type="text" name="peruna2" id="peruna2" readonly="" /> <br />
+
+                    <label>Riisi:</label> <input type="text" name="riisi2" id="riisi2" readonly="" /> <br />
+                </div>
+
+                <div id="ravinto">
+                    <p>Määrät lasketaan kiinteistä arvoista, päivitystä odotellessa.</p>
+                </div>
+
+            </div> <!-- content -->
+
+            <div id="footer">
+
+               <p> &copy; kooppari 2014 </p>
+
+            </div> <!-- footer -->
+
+        <div> <!-- container -->
+
+    </body>
+</html>
